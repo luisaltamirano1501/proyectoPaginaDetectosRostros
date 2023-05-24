@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"  type = "text/css" href="../static/css/styles.css" > 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Mono:wght@100&display=swap" rel="stylesheet">
+    <title>PROYECTO</title>
+  </head>
+  <body>
+    
+    <nav class="Nav">
+        <a> <img src="{{ url_for('static', filename='imagenes/gato2.svg') }}" class="logo"></a>
+        <a class = "itemNav" href="/" id="buttonNav"><strong>Principal</strong> </a> 
+    </nav>
+      
+    <div class="container" id="contenido">
+
+      {% block contenido %}
+      <h1>Pantalla principal</h1>
+
+      <div class="principal">
+        <div class="seccionItem">
+          <h2>camara</h2>
+          <div >
+            <img  class="loader" src="{{ url_for('video_feed') }} " onload="carga()" id="micamara" >
+          </div>
+        </div>
+
+        <div class="seccionItem">
+
+          <h4>Tabla de registros</h4>
+          <table>
+            <thead>
+                <tr>
+                    <th>fecha</th>
+                    <th>hora</th>
+                    <th>Cantidad de personas</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for registro in registros %}
+                <tr>
+                    <td>{{ registro.fecha }}</td>
+                    <td>{{ registro.hora }}</td>
+                    <td>{{ registro.CantidadPersonas }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {% endblock %}
+    </div>
+      <script type="text/javascript" src="../static/js/script.js"></script>  
+    
+  </body>
+</html>
+

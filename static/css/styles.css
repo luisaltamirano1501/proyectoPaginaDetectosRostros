@@ -1,0 +1,125 @@
+@keyframes transitionIn {
+    from {
+        opacity: 0;
+        transform: rotateX(-10deg);
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+body{
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-family: 'Bebas Neue', cursive;
+    font-family: 'Roboto Mono', monospace;
+    margin: 0;
+    background-color: rgb(0, 0, 0);
+}
+
+
+.containerLoader{
+    opacity: 0;
+}
+
+.container{
+    padding-left: 10%;
+    padding-right: 10%;
+    opacity: 1;
+    animation: transitionIn 0.7s;
+}
+
+
+.logo{
+    max-width: 40%; /* Ancho máximo de la imagen */
+    height: auto; /* Altura se ajustará automáticamente */
+    width: 40%; /* Ancho de la imagen al 100% del contenedor */
+}
+
+.Nav{
+    text-decoration: none; /* quita el subrayado */
+    background-color: rgb(61, 61, 61);
+    display: grid;
+    grid-template-columns: minmax(20px,1fr) minmax(20px,1fr) minmax(20px,1fr) minmax(20px,1fr) minmax(20px,1fr) minmax(20px,1fr) minmax(20px,1fr) minmax(20px,1fr);
+    gap: 1rem;
+    padding: 1em;
+    box-shadow: 2px 2px 20px rgb(67, 34, 69);
+
+}
+
+.itemNav{
+    font-size: 15pt;
+    text-decoration: none;
+    color: rgb(234, 240, 126);
+    text-align: center;
+    padding: 1em;
+    flex-grow: 1;
+    border: 1px solid  rgb(61, 61, 61);
+    border-radius: 1em;
+    transition: all 0.5s ease;
+
+}
+.itemNav:hover{
+    border: 1px solid  blueviolet;
+    color: rgb(246, 175, 255);
+    background-color: rgb(67, 55, 68);
+    box-shadow: 0 0 50px var(--color);
+    
+}
+
+
+.principal{
+    color: aliceblue;
+    display: grid;
+    grid-template-columns: minmax(10px,2fr) minmax(20px,1fr);
+    gap: 1rem;
+    padding: 2em;
+
+}
+
+.seccionItem{
+    border: 1px solid rgba(238, 130, 238, 0.712);
+    margin-top: auto;
+    margin-bottom: auto;
+    display: inline-block;
+    position: relative;
+    background-color: rgb(39, 38, 38);
+    border-radius: 1em;
+    box-shadow: 2px 2px 4px rgba(255, 5, 222, 0.853);
+    transition: all 0.5s;
+}
+.seccionItem:hover{
+    border: 1px solid rgb(243, 54, 155);
+    box-shadow: 2px 2px 10px rgba(249, 146, 251, 0.712);
+}
+
+
+
+.loader {
+
+    border-radius: 1em;
+    width: 3em;
+    height: 3em;
+    border: solid rgb(184, 7, 160) 10px;
+    border-bottom: solid transparent 10px;
+    border-radius: 50%;
+    animation: loader 1s linear infinite;
+    position: relative;
+    margin: 2em;
+}
+
+@keyframes loader {
+    0% {
+        transform: rotate(0deg);
+        
+    }
+    100% {
+        transform: rotate(360deg);
+        
+    }
+}
+
+
+
